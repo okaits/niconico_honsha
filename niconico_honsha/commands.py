@@ -7,13 +7,12 @@ import time
 def show() -> None:
     parser = argparse.ArgumentParser(description="Explode Honsha")
     parser.add_argument('--loop', action='store_true', default=False, help="Explode Honsha forever")
+    parser.add_argument('--speed', help="Speed to generate Honsha", default="0.01")
     args = parser.parse_args()
     if args.loop is True:
         while True:
-            niconico_honsha.tools.show()
+            niconico_honsha.tools.show(float(args.speed))
             time.sleep(1)
-            print("\x1B[H\x1B[2J\x1B[3J")
-            time.sleep(2)
     else:
         niconico_honsha.tools.show()
 

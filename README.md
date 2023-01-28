@@ -8,7 +8,7 @@ python3 -m pip install -e .
 ### Run
 #### Explode honsha
 ```bash
-honsha_explode
+honsha_explode [--loop]
 ```
 
 #### Remove file, then explode honsha
@@ -22,3 +22,4 @@ MIT License
 ### Used images
 * nc230167: Honsha Image
 * nc278091: Explode Image
+* im10828373: Exploded Image
