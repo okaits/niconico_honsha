@@ -11,10 +11,10 @@ def show() -> None:
     args = parser.parse_args()
     if args.loop is True:
         while True:
-            niconico_honsha.tools.show(float(args.speed))
+            niconico_honsha.tools.show(speed=float(args.speed))
             time.sleep(1)
     else:
-        niconico_honsha.tools.show()
+        niconico_honsha.tools.show(speed=float(args.speed))
 
 def remove_file() -> None:
     parser = argparse.ArgumentParser(description="Remove file")
