@@ -2,9 +2,20 @@
 
 import niconico_honsha
 import argparse
+import time
 
 def show() -> None:
-    niconico_honsha.tools.show()
+    parser = argparse.ArgumentParser(description="Explode Honsha")
+    parser.add_argument('--loop', action='store_true', default=False, help="Explode Honsha forever")
+    args = parser.parse_args()
+    if args.loop is True:
+        while True:
+            niconico_honsha.tools.show()
+            time.sleep(1)
+            print("\x1B[H\x1B[2J\x1B[3J")
+            time.sleep(2)
+    else:
+        niconico_honsha.tools.show()
 
 def remove_file() -> None:
     parser = argparse.ArgumentParser(description="Remove file")
